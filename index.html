@@ -1,69 +1,266 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>
-practice 1
-</title>
+<meta charset="UTF-8">
+<title>Annual Result 2026</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    text-align: center;
+}
+
+.container {
+    background: white;
+    width: 350px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #2a5298;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+#resultBox {
+    margin-top: 20px;
+    display: none;
+}
+
+.fail {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.loading {
+    font-size: 18px;
+    color: #555;
+}
+
+.captcha-box {
+    margin: 10px 0;
+    font-weight: bold;
+}
+</style>
 </head>
+
 <body>
-<h1>Form</h1>
-<form action="https://formsubmit.co/ranuj8148@gmail.com" method="POST">
-<fieldset>
-<legend> Persnol info </legend>
-<label> First Name</label><br>
-<input type="text"placeholder="enter first name">
-<br><br>
-<label> Last Name</label><br>
-<input type="text"placeholder="enter last name"> <br> <br>
-<label>Gender</label>
-<input type="radio"name="gender">Male
-<input type="radio"name="gender">Female
-<br><br>
-<label> Email i'd</label><br>
-<input type="gmail"placeholder="enter email id ">
-<br><br>
-<label> Password</label><br>
-<input type="password"placeholder="enter password">
-<br><br>
-<label>select country</label>
-<select>
-<option>india</option>
-<option>pakistan</option>
-<option>bangladesh</option>
-<option>nepal</option>
-</selcect>
-<label> Date of birth </label>
-<input type="date"min="1992-01-01"max="2008-01-01">
-<br><br>
-</fieldset>
-<fieldset>
-<legend> game info </legend>
-<label>Gamertag</label><br>
-<input type="text"placeholder="enter gamertag">
-<br><br>
-<label>Total Play Time (in  days)</label><br>
-<input type="number"placeholder="enter playtime in days">
-<br><br>
-<label>Treval distance (in blocks)</label><br>
-<input type="Number"placeholder="in blocks">
-<br><br>\
-<label>select edition(in blocks)</label><br>
-<select>
-<option>Java edition</option>
-<option>Pocket edition</option>
-<option>Bedrock edition</option>
-<option>luanchar edition</option>
-</select>
-<br><br>
-<label>controllers</label><br>
-<input type="radio"name="a" value="A">Touch
-<input type="radio"name="a" value="B">Keyboard mouse
 
+<div class="container">
+    <h2>Annual Result 2026</h2>
 
-</fieldset>
-  <br><br>
-  <input type="submit">
-  <input type="reset">
-</form>
+    <select id="class">
+        <option value="">Select Class</option>
+        <option>IX</option>
+        <option>XI</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="roll" placeholder="Enter Roll Number">
+    <input type="text" id="studentId" placeholder="Enter Student ID">
+
+    <div class="captcha-box">
+        Captcha: <span id="captchaNum"></span>
+    </div>
+    <input type="text" id="captchaInput" placeholder="Enter Captcha">
+
+    <button onclick="checkResult()">Check Result</button>
+
+    <div id="resultBox">
+        <p id="loadingText" class="loading">Checking result...</p>
+        <p id="finalResult" class="fail"></p>
+    </div>
+</div>
+
+<script>
+let captchaValue;
+
+function generateCaptcha() {
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Annual Result 2026</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    text-align: center;
+}
+
+.container {
+    background: white;
+    width: 350px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #2a5298;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+#resultBox {
+    margin-top: 20px;
+    display: none;
+}
+
+.fail {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.loading {
+    font-size: 18px;
+    color: #555;
+}
+
+.captcha-box {
+    margin: 10px 0;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Annual Result 2026</h2>
+
+    <select id="class">
+        <option value="">Select Class</option>
+        <option>IX</option>
+        <option>XI</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="roll" placeholder="Enter Roll Number">
+    <input type="text" id="studentId" placeholder="Enter Student ID">
+
+    <div class="captcha-box">
+        Captcha: <span id="captchaNum"></span>
+    </div>
+    <input type="text" id="captchaInput" placeholder="Enter Captcha">
+
+    <button onclick="checkResult()">Check Result</button>
+
+    <div id="resultBox">
+        <p id="loadingText" class="loading">Checking result...</p>
+        <p id="finalResult" class="fail"></p>
+    </div>
+</div>
+
+<script>
+let captchaValue;
+
+function generateCaptcha() {
+    captchaValue = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById("captchaNum").innerText = captchaValue;
+}
+
+function checkResult() {
+    let captchaInput = document.getElementById("captchaInput").value;
+
+    if (captchaInput != captchaValue) {
+        alert("Wrong Captcha!");
+        generateCaptcha();
+        return;
+    }
+
+    let box = document.getElementById("resultBox");
+    let loading = document.getElementById("loadingText");
+    let result = document.getElementById("finalResult");
+
+    box.style.display = "block";
+    result.innerHTML = "";
+    loading.style.display = "block";
+
+    setTimeout(() => {
+        loading.style.display = "none";
+        result.innerHTML = "❌ FAIL ❌";
+    }, 2000);
+}
+
+generateCaptcha();
+</script>
+
+</body>
+</html>    captchaValue = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById("captchaNum").innerText = captchaValue;
+}
+
+function checkResult() {
+    let captchaInput = document.getElementById("captchaInput").value;
+
+    if (captchaInput != captchaValue) {
+        alert("Wrong Captcha!");
+        generateCaptcha();
+        return;
+    }
+
+    let box = document.getElementById("resultBox");
+    let loading = document.getElementById("loadingText");
+    let result = document.getElementById("finalResult");
+
+    box.style.display = "block";
+    result.innerHTML = "";
+    loading.style.display = "block";
+
+    setTimeout(() => {
+        loading.style.display = "none";
+        result.innerHTML = "❌ FAIL ❌";
+    }, 2000);
+}
+
+generateCaptcha();
+</script>
+
 </body>
 </html>
